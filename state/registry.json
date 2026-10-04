@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "counters": {
+    "season_1_next": 2
+  },
+  "episodes": {
+    "s01e001": {
+      "episode_id": "s01e001",
+      "slot_key": "long:test-dry-run",
+      "stage": "PLANNED",
+      "attempts": 0,
+      "created_at": "2026-10-02T08:24:49Z",
+      "updated_at": "2026-10-02T09:07:49Z",
+      "title": "What Happens When Juni Waits?",
+      "premise": "Juni rushes to finish a bridge for her friends, but the wood isn’t ready. She learns that taking a moment to be patient helps everyone succeed. Young viewers see how waiting can turn a small act into a bright surprise.",
+      "youtube_video_id": null,
+      "shorts": {},
+      "manifest_checksum": "2d33519571721376c2e11aa13cd7a35e259006cf35d0eb5a43e8dada392d4f01",
+      "error": null,
+      "learning_spine": "patience",
+      "youtube_title": "What Happens When Juni Waits? | Fernwood Friends S1E01",
+      "script_qc": {
+        "status": "PASS",
+        "at": "2026-10-02T17:41:51Z",
+        "warnings": 0
+      }
+    }
+  }
+}

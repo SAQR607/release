@@ -1,0 +1,128 @@
+{
+  "channel": {
+    "name": "Fernwood Friends",
+    "handle": "",
+    "language": "en",
+    "target_age": "4-8",
+    "made_for_kids": true,
+    "youtube_category_id": "24",
+    "description_short": "Fernwood Friends: gentle animated woodland adventures for kids ages 4-8. New long stories Monday, Wednesday and Friday - fresh Shorts every Tuesday, Thursday and Saturday."
+  },
+  "content": {
+    "season": 1,
+    "long_per_week": 3,
+    "shorts_per_long": 2,
+    "tone": "warm, curious, gently funny, brave; never scary or violent"
+  },
+  "schedule": {
+    "long": [
+      {
+        "day": "monday",
+        "time_utc": "16:00"
+      },
+      {
+        "day": "wednesday",
+        "time_utc": "16:00"
+      },
+      {
+        "day": "friday",
+        "time_utc": "16:00"
+      }
+    ],
+    "shorts": [
+      {
+        "day": "tuesday",
+        "time_utc": "16:00"
+      },
+      {
+        "day": "thursday",
+        "time_utc": "16:00"
+      },
+      {
+        "day": "saturday",
+        "time_utc": "16:00"
+      }
+    ]
+  },
+  "duration": {
+    "long_target_sec": 540,
+    "long_min_sec": 480,
+    "long_max_sec": 600,
+    "short_min_sec": 25,
+    "short_max_sec": 45,
+    "short_target_sec": 34
+  },
+  "render": {
+    "width": 1920,
+    "height": 1080,
+    "short_width": 1080,
+    "short_height": 1920,
+    "fps": 24,
+    "video_codec": "libx264",
+    "crf": 20,
+    "preset": "veryfast",
+    "audio_codec": "aac",
+    "audio_bitrate": "192k",
+    "sample_rate": 44100
+  },
+  "voices": {
+    "narrator": "af_bella",
+    "Juni": "af_heart",
+    "Bramble": "am_michael",
+    "Marlow": "am_fenrir",
+    "Wren": "af_nova",
+    "Willowby": "am_adam",
+    "Fern": "af_sky",
+    "Pipkin": "af_kore"
+  },
+  "groq": {
+    "model": "openai/gpt-oss-120b",
+    "max_tokens": 5600,
+    "temperature": 0.8,
+    "timeout_sec": 120,
+    "max_attempts_per_call": 6,
+    "backoff_base_sec": 2,
+    "backoff_max_sec": 60
+  },
+  "qc": {
+    "script_min_score": 0.7,
+    "audio_word_overlap_min": 0.8,
+    "audio_max_silence_sec": 3.0,
+    "audio_duration_tolerance_sec": 20,
+    "render_duration_tolerance_sec": 15,
+    "short_duration_tolerance_sec": 4,
+    "max_stage_retries": 3
+  },
+  "telegram": {
+    "enabled": true,
+    "notify_publish": true,
+    "notify_failure": true,
+    "channel_snapshot": true
+  },
+  "youtube": {
+    "privacy_long": "public",
+    "privacy_shorts": "public",
+    "default_tags": [
+      "kids stories",
+      "animated stories for kids",
+      "wholesome kids video",
+      "friends adventures",
+      "ages 4-8"
+    ]
+  },
+  "music": {
+    "enabled": true,
+    "bed_gain_db": -16.0,
+    "sfx_gain_db": -10.0
+  },
+  "paths": {
+    "state": "state",
+    "workspace": "workspace",
+    "assets": "assets",
+    "universe": "universe"
+  },
+  "tts": {
+    "speed": 1.0,
+    "engine": "kokoro-onnx"
+  }
+}

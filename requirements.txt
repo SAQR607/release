@@ -1,0 +1,11 @@
+# Runtime dependencies (Python 3.11+; tested on 3.12)
+pillow>=10.3
+numpy>=1.26
+soundfile>=0.12
+faster-whisper>=1.0
+kokoro-onnx>=0.4
+onnxruntime>=1.18
+google-api-python-client>=2.130
+google-auth>=2.29
+google-auth-oauthlib>=1.2
+pytest>=8.0

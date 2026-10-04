@@ -1,0 +1,1060 @@
+{
+  "schema": "fernwood.episode/1",
+  "episode_id": "s01e001",
+  "title": "What Happens When Juni Waits?",
+  "premise": "Juni rushes to finish a bridge for her friends, but the wood isn’t ready. She learns that taking a moment to be patient helps everyone succeed. Young viewers see how waiting can turn a small act into a bright surprise.",
+  "learning_spine": "patience",
+  "duration_target_sec": 540,
+  "hook": "Can Juni finish the bridge before the wood settles?",
+  "arc_crumb": "First Glimmer lights drift over Glimmer Meadow right after Juni's small act of help (visual only, wonder beat).",
+  "scenes": [
+    {
+      "scene_id": "sc01",
+      "location": "hollow_oak_village",
+      "time_of_day": "morning",
+      "camera": "static",
+      "transition_in": "fade",
+      "music_mood": "happy",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "left",
+          "enter": "onscreen",
+          "state": "run"
+        },
+        {
+          "id": "bramble",
+          "position": "right",
+          "enter": "onscreen",
+          "state": "idle"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Friends, I need a bridge fast before the river rises!",
+          "emotion": "determined",
+          "action": "hops forward"
+        },
+        {
+          "speaker": "bramble",
+          "text": "Patience, Juni, the wood must settle first, remember?",
+          "emotion": "worried",
+          "action": "raises brow"
+        },
+        {
+          "speaker": "juni",
+          "text": "But my friends are waiting, I can’t waste time!",
+          "emotion": "brave",
+          "action": "tugs a plank"
+        },
+        {
+          "speaker": "bramble",
+          "text": "Measure twice, dig once, even bridges need breathing space.",
+          "emotion": "neutral",
+          "action": "holds tool_belt"
+        },
+        {
+          "speaker": "juni",
+          "text": "Okay, I’ll wait a moment, maybe the wood will help.",
+          "emotion": "curious",
+          "action": "stops running"
+        }
+      ],
+      "narration": [
+        {
+          "text": "Morning light filtered through the oak leaves as Juni sprinted, her tail a blur. Bramble watched, his whiskers twitching, knowing the fresh wood needed time to settle. The river sang softly, urging calm before construction could begin."
+        }
+      ],
+      "props": [
+        "tool_belt"
+      ],
+      "fx": [
+        "leaf_swirl"
+      ]
+    },
+    {
+      "scene_id": "sc02",
+      "location": "great_hollow",
+      "time_of_day": "morning",
+      "camera": "pan_r",
+      "transition_in": "cut",
+      "music_mood": "discovery",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "enter_left",
+          "state": "walk"
+        },
+        {
+          "id": "marlow",
+          "position": "right",
+          "enter": "onscreen",
+          "state": "idle"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Marlow, can you fetch the sturdy plank from the store?",
+          "emotion": "determined",
+          "action": "looks around"
+        },
+        {
+          "speaker": "marlow",
+          "text": "Sure thing, but the plank needs a little drying first!",
+          "emotion": "silly",
+          "action": "grins widely"
+        },
+        {
+          "speaker": "juni",
+          "text": "Drying? It’s already dry, I think it’s ready!",
+          "emotion": "curious",
+          "action": "scratches head"
+        },
+        {
+          "speaker": "marlow",
+          "text": "Patience makes wood stronger, like a nap for a leaf!",
+          "emotion": "amazed",
+          "action": "taps plank"
+        },
+        {
+          "speaker": "juni",
+          "text": "A nap for a leaf? I’ll wait then, okay!",
+          "emotion": "curious",
+          "action": "nods"
+        }
+      ],
+      "narration": [
+        {
+          "text": "Inside the great hollow, sunlight danced on hanging lanterns. Marlow lifted the plank, feeling its slight dampness. He whispered a joke about leaves taking naps, and Juni’s ears perked up, realizing waiting could be helpful after all."
+        }
+      ],
+      "props": [
+        "plank_boat"
+      ],
+      "fx": [
+        "dust_motes"
+      ]
+    },
+    {
+      "scene_id": "sc03",
+      "location": "whispering_stream",
+      "time_of_day": "morning",
+      "camera": "static",
+      "transition_in": "fade",
+      "music_mood": "calm",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "left",
+          "enter": "onscreen",
+          "state": "think"
+        },
+        {
+          "id": "wren",
+          "position": "right",
+          "enter": "enter_right",
+          "state": "idle"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Wren, do you think the wood will settle soon?",
+          "emotion": "curious",
+          "action": "tilts head"
+        },
+        {
+          "speaker": "wren",
+          "text": "The stream waits for pebbles to settle, too, Juni.",
+          "emotion": "neutral",
+          "action": "flutters wing"
+        },
+        {
+          "speaker": "juni",
+          "text": "So waiting isn’t wasted, it’s part of building!",
+          "emotion": "determined",
+          "action": "smiles"
+        },
+        {
+          "speaker": "wren",
+          "text": "Exactly, patience lets the world line up correctly.",
+          "emotion": "happy",
+          "action": "hops forward"
+        },
+        {
+          "speaker": "juni",
+          "text": "I’ll sit and watch the water for clues.",
+          "emotion": "proud",
+          "action": "sits down"
+        }
+      ],
+      "narration": [
+        {
+          "text": "By the whispering stream, ripples glimmered as Juni and Wren observed floating leaves. The water moved slowly, teaching that even nature takes time to settle. Juni felt a gentle calm settle inside her, matching the stream’s rhythm."
+        }
+      ],
+      "props": [
+        "magnifier_leaf"
+      ],
+      "fx": [
+        "ripple_ring"
+      ]
+    },
+    {
+      "scene_id": "sc04",
+      "location": "glimmer_meadow",
+      "time_of_day": "dusk",
+      "camera": "drift",
+      "transition_in": "dissolve",
+      "music_mood": "mystery",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "enter_top",
+          "state": "idle"
+        },
+        {
+          "id": "bramble",
+          "position": "far_left",
+          "enter": "enter_left",
+          "state": "idle"
+        },
+        {
+          "id": "marlow",
+          "position": "far_right",
+          "enter": "enter_right",
+          "state": "idle"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Look, the Glimmer lights are starting to glow!",
+          "emotion": "amazed",
+          "action": "points upward"
+        },
+        {
+          "speaker": "bramble",
+          "text": "They appear when kind hearts wait and watch together.",
+          "emotion": "proud",
+          "action": "nods wisely"
+        },
+        {
+          "speaker": "marlow",
+          "text": "Patience turned our bridge idea into bright wonder!",
+          "emotion": "excited",
+          "action": "claps paws"
+        },
+        {
+          "speaker": "juni",
+          "text": "I never knew waiting could shine like this!",
+          "emotion": "happy",
+          "action": "spins gently"
+        },
+        {
+          "speaker": "bramble",
+          "text": "Now let’s finish the bridge with calm confidence.",
+          "emotion": "determined",
+          "action": "holds rope_coil"
+        }
+      ],
+      "narration": [
+        {
+          "text": "Dusk settled over Glimmer Meadow, and tiny luminous lights rose like fireflies. The friends gathered, feeling the warm glow of patience rewarding their quiet moment. The meadow’s magic whispered that waiting could create beautiful surprises for all who believed."
+        }
+      ],
+      "props": [
+        "rope_coil"
+      ],
+      "fx": [
+        "glimmer_sparkle"
+      ]
+    },
+    {
+      "scene_id": "sc05",
+      "location": "mossy_ravine",
+      "time_of_day": "dusk",
+      "camera": "push_in",
+      "transition_in": "fade",
+      "music_mood": "adventure",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "onscreen",
+          "state": "walk"
+        },
+        {
+          "id": "willowby",
+          "position": "left",
+          "enter": "enter_left",
+          "state": "idle"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Willowby, can we start building the bridge now?",
+          "emotion": "determined",
+          "action": "places plank"
+        },
+        {
+          "speaker": "willowby",
+          "text": "What does the wood feel like after waiting?",
+          "emotion": "curious",
+          "action": "tilts head"
+        },
+        {
+          "speaker": "juni",
+          "text": "It feels steadier, like a calm friend waiting.",
+          "emotion": "proud",
+          "action": "touches wood"
+        },
+        {
+          "speaker": "willowby",
+          "text": "How might that help us cross safely?",
+          "emotion": "neutral",
+          "action": "leans forward"
+        },
+        {
+          "speaker": "juni",
+          "text": "A steady bridge won’t wobble when friends walk across.",
+          "emotion": "confident",
+          "action": "nods"
+        }
+      ],
+      "narration": [
+        {
+          "text": "At the mossy ravine, the friends faced the unfinished bridge. Willowby asked gentle questions, guiding Juni to notice the wood’s new firmness. The calm wood promised a safe path, and the friends felt hopeful together."
+        }
+      ],
+      "props": [
+        "lantern"
+      ],
+      "fx": [
+        "dust_motes"
+      ]
+    },
+    {
+      "scene_id": "sc06",
+      "location": "mossy_ravine",
+      "time_of_day": "dusk",
+      "camera": "pull_out",
+      "transition_in": "cut",
+      "music_mood": "happy",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "onscreen",
+          "state": "talk_closed"
+        },
+        {
+          "id": "bramble",
+          "position": "right",
+          "enter": "enter_right",
+          "state": "talk_mid"
+        },
+        {
+          "id": "wren",
+          "position": "left",
+          "enter": "enter_left",
+          "state": "talk_open"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Let’s place the plank slowly, matching the wood’s rhythm.",
+          "emotion": "determined",
+          "action": "aligns plank"
+        },
+        {
+          "speaker": "bramble",
+          "text": "Measure twice, dig once, even bridges need patience.",
+          "emotion": "happy",
+          "action": "checks tool_belt"
+        },
+        {
+          "speaker": "wren",
+          "text": "I’ll sing a steady song to keep us calm.",
+          "emotion": "happy",
+          "action": "tweets softly"
+        },
+        {
+          "speaker": "juni",
+          "text": "Your song makes the wood feel even steadier!",
+          "emotion": "proud",
+          "action": "smiles"
+        },
+        {
+          "speaker": "bramble",
+          "text": "Together we’ll finish it, one careful step at a time.",
+          "emotion": "confident",
+          "action": "holds rope_coil"
+        }
+      ],
+      "narration": [
+        {
+          "text": "The friends worked together, each movement deliberate. Juni placed the plank, Bramble measured, and Wren’s gentle melody floated across the ravine. The bridge grew piece by piece, reinforced by the calm patience they shared."
+        }
+      ],
+      "props": [
+        "tool_belt"
+      ],
+      "fx": [
+        "leaf_swirl"
+      ]
+    },
+    {
+      "scene_id": "sc07",
+      "location": "mossy_ravine",
+      "time_of_day": "dusk",
+      "camera": "static",
+      "transition_in": "fade",
+      "music_mood": "emotional",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "onscreen",
+          "state": "happy"
+        },
+        {
+          "id": "bramble",
+          "position": "right",
+          "enter": "enter_right",
+          "state": "happy"
+        },
+        {
+          "id": "marlow",
+          "position": "left",
+          "enter": "enter_left",
+          "state": "happy"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "The bridge is steady! We did it by waiting!",
+          "emotion": "excited",
+          "action": "jumps"
+        },
+        {
+          "speaker": "bramble",
+          "text": "Patience turned wood into a safe crossing, wonderful!",
+          "emotion": "proud",
+          "action": "claps"
+        },
+        {
+          "speaker": "marlow",
+          "text": "Now we can snack on the other side together!",
+          "emotion": "silly",
+          "action": "holds snack_basket"
+        },
+        {
+          "speaker": "juni",
+          "text": "Friends, thank you for waiting with me!",
+          "emotion": "happy",
+          "action": "hugs"
+        },
+        {
+          "speaker": "bramble",
+          "text": "Remember, good things grow when we give them time.",
+          "emotion": "determined",
+          "action": "nods"
+        }
+      ],
+      "narration": [
+        {
+          "text": "The completed bridge arched gracefully over the ravine, bathed in Glimmer light. The friends crossed hand‑in‑paw, laughing as they reached the far side. Their hearts glowed brighter than the meadow’s lights, proof that patience builds lasting bridges."
+        }
+      ],
+      "props": [
+        "snack_basket"
+      ],
+      "fx": [
+        "glimmer_sparkle"
+      ]
+    },
+    {
+      "scene_id": "sc08",
+      "location": "glimmer_meadow",
+      "time_of_day": "dusk",
+      "camera": "drift",
+      "transition_in": "fade",
+      "music_mood": "happy",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "onscreen",
+          "state": "wave"
+        },
+        {
+          "id": "willowby",
+          "position": "right",
+          "enter": "enter_right",
+          "state": "wave"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Willowby, the bridge is ready thanks to waiting!",
+          "emotion": "proud",
+          "action": "waves"
+        },
+        {
+          "speaker": "willowby",
+          "text": "How did waiting change the wood’s feeling?",
+          "emotion": "curious",
+          "action": "tilts head"
+        },
+        {
+          "speaker": "juni",
+          "text": "It became steady, like a quiet river flowing.",
+          "emotion": "happy",
+          "action": "gestures"
+        },
+        {
+          "speaker": "willowby",
+          "text": "What else can patience help you build?",
+          "emotion": "neutral",
+          "action": "smiles"
+        },
+        {
+          "speaker": "juni",
+          "text": "Anything, as long as I listen and wait gently.",
+          "emotion": "confident",
+          "action": "nods"
+        }
+      ],
+      "narration": [
+        {
+          "text": "Under the glowing Glimmer, Willowby and Juni shared a quiet moment. The meadow’s lights pulsed softly, echoing the lesson that patience not only builds bridges but also nurtures every dream the friends might imagine."
+        }
+      ],
+      "props": [],
+      "fx": [
+        "glimmer_sparkle"
+      ]
+    },
+    {
+      "scene_id": "sc09",
+      "location": "hollow_oak_village",
+      "time_of_day": "night",
+      "camera": "static",
+      "transition_in": "fade",
+      "music_mood": "calm",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "onscreen",
+          "state": "idle"
+        },
+        {
+          "id": "fern",
+          "position": "right",
+          "enter": "enter_right",
+          "state": "idle"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Fern, would you like to rest on the new bridge?",
+          "emotion": "happy",
+          "action": "gestures"
+        },
+        {
+          "speaker": "fern",
+          "text": "Yes, thank you, Juni. It feels safe and bright.",
+          "emotion": "happy",
+          "action": "steps gently"
+        },
+        {
+          "speaker": "juni",
+          "text": "I’m glad our patience made it comfortable for you.",
+          "emotion": "proud",
+          "action": "smiles"
+        },
+        {
+          "speaker": "fern",
+          "text": "The meadow’s lights thank us with gentle glow.",
+          "emotion": "amazed",
+          "action": "looks up"
+        },
+        {
+          "speaker": "juni",
+          "text": "We’ll keep waiting when needed, for all friends.",
+          "emotion": "determined",
+          "action": "nods"
+        }
+      ],
+      "narration": [
+        {
+          "text": "Night settled over the village, and the new bridge glowed faintly under lantern light. Fern padded across, feeling the wood’s steady support. The friends gathered, sharing quiet gratitude as the Glimmer lights twinkled like distant stars."
+        }
+      ],
+      "props": [
+        "lantern"
+      ],
+      "fx": [
+        "lamp_glow"
+      ]
+    },
+    {
+      "scene_id": "sc10",
+      "location": "great_hollow",
+      "time_of_day": "night",
+      "camera": "push_in",
+      "transition_in": "cut",
+      "music_mood": "emotional",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "onscreen",
+          "state": "think"
+        },
+        {
+          "id": "pipkin",
+          "position": "left",
+          "enter": "enter_left",
+          "state": "idle"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Pipkin, can you count how many Glimmer lights appeared?",
+          "emotion": "curious",
+          "action": "points upward"
+        },
+        {
+          "speaker": "pipkin",
+          "text": "One, two, three… many! They sparkle like tiny stars!",
+          "emotion": "excited",
+          "action": "taps foot"
+        },
+        {
+          "speaker": "juni",
+          "text": "Each light reminds us patience shines bright inside us.",
+          "emotion": "proud",
+          "action": "nods"
+        },
+        {
+          "speaker": "pipkin",
+          "text": "I will count them whenever I feel rushed!",
+          "emotion": "determined",
+          "action": "claps"
+        },
+        {
+          "speaker": "juni",
+          "text": "Let’s remember this feeling whenever we build again.",
+          "emotion": "confident",
+          "action": "smiles"
+        }
+      ],
+      "narration": [
+        {
+          "text": "In the great hollow, Pipkin’s tiny voice echoed, counting the glowing specks. Juni felt the warmth of each light, a reminder that waiting creates sparkle. Their hearts beat calmly, matching the gentle rhythm of the night’s glow."
+        }
+      ],
+      "props": [
+        "blue_pebble"
+      ],
+      "fx": [
+        "glimmer_sparkle"
+      ]
+    },
+    {
+      "scene_id": "sc11",
+      "location": "willowbys_burrow",
+      "time_of_day": "night",
+      "camera": "pan_l",
+      "transition_in": "fade",
+      "music_mood": "calm",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "left",
+          "enter": "enter_left",
+          "state": "talk_closed"
+        },
+        {
+          "id": "willowby",
+          "position": "right",
+          "enter": "enter_right",
+          "state": "talk_mid"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Willowby, I learned waiting makes work stronger, right?",
+          "emotion": "confident",
+          "action": "nods"
+        },
+        {
+          "speaker": "willowby",
+          "text": "What does patience feel like inside your heart?",
+          "emotion": "curious",
+          "action": "leans forward"
+        },
+        {
+          "speaker": "juni",
+          "text": "A gentle hum, like a soft breeze through leaves.",
+          "emotion": "happy",
+          "action": "smiles"
+        },
+        {
+          "speaker": "willowby",
+          "text": "And how will you use that hum tomorrow?",
+          "emotion": "neutral",
+          "action": "sips tea"
+        },
+        {
+          "speaker": "juni",
+          "text": "I’ll pause, breathe, then plan before I act.",
+          "emotion": "determined",
+          "action": "places paw"
+        }
+      ],
+      "narration": [
+        {
+          "text": "Inside Willowby’s cozy burrow, the fire crackled softly. Juni shared her new understanding, and Willowby’s questions deepened the lesson. The quiet room felt warm, echoing the patient rhythm that now guided Juni’s thoughts."
+        }
+      ],
+      "props": [
+        "book"
+      ],
+      "fx": [
+        "speech_pop"
+      ]
+    },
+    {
+      "scene_id": "sc12",
+      "location": "glimmer_cave",
+      "time_of_day": "night",
+      "camera": "drift",
+      "transition_in": "dissolve",
+      "music_mood": "mystery",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "onscreen",
+          "state": "think"
+        },
+        {
+          "id": "wren",
+          "position": "right",
+          "enter": "enter_right",
+          "state": "idle"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Wren, could the cave’s heart‑stone need patience too?",
+          "emotion": "curious",
+          "action": "looks around"
+        },
+        {
+          "speaker": "wren",
+          "text": "Even stones settle when we wait quietly nearby.",
+          "emotion": "amazed",
+          "action": "flutters"
+        },
+        {
+          "speaker": "juni",
+          "text": "Let’s sit and listen to its soft glow together.",
+          "emotion": "determined",
+          "action": "sits down"
+        },
+        {
+          "speaker": "wren",
+          "text": "Patience makes even darkness feel friendly.",
+          "emotion": "happy",
+          "action": "sings softly"
+        },
+        {
+          "speaker": "juni",
+          "text": "Our patience lights the cave as bright as meadow.",
+          "emotion": "proud",
+          "action": "glows"
+        }
+      ],
+      "narration": [
+        {
+          "text": "The glimmer cave’s heart‑stone pulsed faintly, its light growing steadier as the friends waited. Their calm presence coaxed the stone to shine brighter, proving patience could illuminate even the deepest, quietest places."
+        }
+      ],
+      "props": [
+        "compass_stone"
+      ],
+      "fx": [
+        "glimmer_sparkle"
+      ]
+    },
+    {
+      "scene_id": "sc13",
+      "location": "glimmer_meadow",
+      "time_of_day": "night",
+      "camera": "pull_out",
+      "transition_in": "fade",
+      "music_mood": "happy",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "onscreen",
+          "state": "wave"
+        },
+        {
+          "id": "marlow",
+          "position": "right",
+          "enter": "enter_right",
+          "state": "wave"
+        },
+        {
+          "id": "bramble",
+          "position": "left",
+          "enter": "enter_left",
+          "state": "wave"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Friends, let’s celebrate our patient bridge with a dance!",
+          "emotion": "excited",
+          "action": "spins"
+        },
+        {
+          "speaker": "marlow",
+          "text": "Snack first, dance second! I brought berries!",
+          "emotion": "silly",
+          "action": "holds snack_basket"
+        },
+        {
+          "speaker": "bramble",
+          "text": "Patience gave us this moment to enjoy together!",
+          "emotion": "proud",
+          "action": "claps"
+        },
+        {
+          "speaker": "juni",
+          "text": "The meadow glows brighter when we share joy!",
+          "emotion": "happy",
+          "action": "twirls"
+        },
+        {
+          "speaker": "marlow",
+          "text": "Our hearts beat steady, just like our bridge!",
+          "emotion": "confident",
+          "action": "jumps"
+        }
+      ],
+      "narration": [
+        {
+          "text": "Under a star‑filled sky, the meadow’s glimmer lights pulsed in rhythm with the friends’ laughter. They danced, shared berries, and felt the gentle power of patience humming through every step, a bright celebration of teamwork."
+        }
+      ],
+      "props": [
+        "snack_basket"
+      ],
+      "fx": [
+        "glimmer_sparkle"
+      ]
+    },
+    {
+      "scene_id": "sc14",
+      "location": "hollow_oak_village",
+      "time_of_day": "night",
+      "camera": "static",
+      "transition_in": "fade",
+      "music_mood": "calm",
+      "characters": [
+        {
+          "id": "juni",
+          "position": "center",
+          "enter": "onscreen",
+          "state": "wave"
+        },
+        {
+          "id": "willowby",
+          "position": "right",
+          "enter": "enter_right",
+          "state": "wave"
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "Goodnight, Willowby, thanks for asking gentle questions.",
+          "emotion": "happy",
+          "action": "waves"
+        },
+        {
+          "speaker": "willowby",
+          "text": "What will you remember most from tonight’s adventure?",
+          "emotion": "curious",
+          "action": "smiles"
+        },
+        {
+          "speaker": "juni",
+          "text": "The quiet power of waiting before I act.",
+          "emotion": "proud",
+          "action": "nods"
+        },
+        {
+          "speaker": "willowby",
+          "text": "And the bright lights that follow patient hearts?",
+          "emotion": "neutral",
+          "action": "looks up"
+        },
+        {
+          "speaker": "juni",
+          "text": "I’ll carry that glow forever, dear friend.",
+          "emotion": "determined",
+          "action": "hugs"
+        }
+      ],
+      "narration": [
+        {
+          "text": "The village lights dimmed gently as the night deepened. Juni and Willowby shared a warm farewell, their hearts echoing the soft glow of the Glimmer. The lesson of patience settled like a comfortable blanket over the valley."
+        }
+      ],
+      "props": [],
+      "fx": [
+        "endcard_wave"
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "short_id": "short_1",
+      "kind": "funny",
+      "title": "Juni’s Quick Bridge Sprint",
+      "location": "hollow_oak_village",
+      "time_of_day": "morning",
+      "camera": "pan_r",
+      "characters": [
+        "juni",
+        "marlow"
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "I’ll dash and finish the bridge before sunrise!",
+          "emotion": "determined",
+          "action": "runs"
+        },
+        {
+          "speaker": "marlow",
+          "text": "Hold on, fast friends, wood needs a tiny nap!",
+          "emotion": "silly",
+          "action": "laughs"
+        },
+        {
+          "speaker": "juni",
+          "text": "A nap? My paws are already buzzing with excitement!",
+          "emotion": "curious",
+          "action": "taps foot"
+        },
+        {
+          "speaker": "marlow",
+          "text": "Patience is a secret power, even for speedy squirrels!",
+          "emotion": "amazed",
+          "action": "points"
+        },
+        {
+          "speaker": "juni",
+          "text": "Alright, I’ll wait a moment, see the magic!",
+          "emotion": "happy",
+          "action": "stops"
+        }
+      ],
+      "music_mood": "happy",
+      "duration_target_sec": 34
+    },
+    {
+      "short_id": "short_2",
+      "kind": "wonder",
+      "title": "Glimmer Lights After a Small Act",
+      "location": "glimmer_meadow",
+      "time_of_day": "dusk",
+      "camera": "drift",
+      "characters": [
+        "juni",
+        "bramble"
+      ],
+      "dialogue": [
+        {
+          "speaker": "juni",
+          "text": "I helped a friend, and now the lights appear!",
+          "emotion": "amazed",
+          "action": "looks up"
+        },
+        {
+          "speaker": "bramble",
+          "text": "Patience turned that tiny help into bright sparkle!",
+          "emotion": "proud",
+          "action": "nods"
+        },
+        {
+          "speaker": "juni",
+          "text": "The meadow glows like a gentle night lantern!",
+          "emotion": "happy",
+          "action": "spins"
+        },
+        {
+          "speaker": "bramble",
+          "text": "Every patient heart adds a new glimmering star!",
+          "emotion": "confident",
+          "action": "points"
+        },
+        {
+          "speaker": "juni",
+          "text": "I’ll remember to wait and watch each day!",
+          "emotion": "determined",
+          "action": "smiles"
+        }
+      ],
+      "music_mood": "discovery",
+      "duration_target_sec": 34
+    }
+  ],
+  "metadata": {
+    "title": "What Happens When Juni Waits? | Fernwood Friends S1E01",
+    "description": "Juni rushes to finish a bridge for her friends, but the wood isn’t ready. She learns that taking a moment to be patient helps everyone succeed. Young viewers see how waiting can turn a small act into a bright surprise. Fernwood Friends - gentle animated woodland adventures for ages 4-8. New episodes every Friday.",
+    "tags": [
+      "kids stories",
+      "animated stories for kids",
+      "wholesome kids video",
+      "ages 4-8",
+      "woodland animals",
+      "preschool stories",
+      "kids animation",
+      "patience lesson",
+      "bridge building",
+      "glimmer meadow",
+      "gentle adventure",
+      "friendship",
+      "learning patience",
+      "Fernwood Friends"
+    ],
+    "callbacks_available": [
+      "onPause",
+      "onResume"
+    ]
+  }
+}

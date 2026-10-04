@@ -1,0 +1,151 @@
+name: production
+
+on:
+  schedule:
+    # 16:05 UTC Mon-Sat: five minutes after every configured slot (16:00 UTC).
+    # plan_due() claims any slot within a 26h catch-up window, so a missed
+    # cron is recovered by the next scheduled run.
+    - cron: '5 16 * * 1-6'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'production = real publish; dry-run = build+QC only; sample = tiny build+QC'
+        type: choice
+        options: [production, dry-run, sample]
+        default: production
+      sample_seconds:
+        description: seconds to render in sample mode
+        default: '10'
+
+# One production run at a time; never kill a build that is mid-flight.
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+# write: state/ (registry, package docs, story memory) is pushed back after
+# the run so the next scheduled job resumes exactly where this one stopped.
+permissions:
+  contents: write
+
+env:
+  PYTHONUTF8: '1'
+  TZ: UTC
+  # Conservative thread caps on the 4-vCPU hosted runner.
+  TTS_THREADS: '2'
+  FFMPEG_THREADS: '2'
+  WHISPER_THREADS: '2'
+  GROQ_API_KEYS: ${{ secrets.GROQ_API_KEYS }}
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+  YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+  YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+  YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # state persistence rebase-pushes to the default branch
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Verify ffmpeg
+        run: ffmpeg -version && ffprobe -version
+
+      - name: Free runner disk (14 GB SSD on ubuntu-latest)
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
+            /opt/hostedtoolcache/CodeQL 2>/dev/null || true
+          df -h /
+
+      - name: Cache models (kokoro + whisper)
+        uses: actions/cache@v4
+        with:
+          path: |
+            models
+            ~/.cache/huggingface
+          key: models-${{ runner.os }}-v1-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            models-${{ runner.os }}-v1-
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Init config/state
+        run: python -m app init
+
+      - name: Doctor (offline)
+        run: python -m app doctor
+
+      - name: Disk check (need >= 4 GB free before building)
+        run: |
+          AVAIL=$(df -BG --output=avail / | tail -1 | tr -dc '0-9')
+          echo "free disk: ${AVAIL}GB"
+          [ "$AVAIL" -ge 4 ] || { echo "::error::less than 4 GB free"; exit 1; }
+
+      - name: Resolve mode
+        id: mode
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_MODE: ${{ inputs.mode }}
+          INPUT_SAMPLE: ${{ inputs.sample_seconds }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "mode=$INPUT_MODE" >> "$GITHUB_OUTPUT"
+            echo "sample=$INPUT_SAMPLE" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=production" >> "$GITHUB_OUTPUT"
+            echo "sample=10" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Produce due jobs
+        env:
+          MODE: ${{ steps.mode.outputs.mode }}
+          SAMPLE: ${{ steps.mode.outputs.sample }}
+        run: |
+          case "$MODE" in
+            production) python -m app produce ;;
+            dry-run)    python -m app produce --dry-run ;;
+            sample)     python -m app produce --dry-run --sample "$SAMPLE" ;;
+            *) echo "::error::unknown mode"; exit 1 ;;
+          esac
+
+      # Git carries state, never bytes: push the registry/package/story docs so
+      # the next run (fresh checkout) resumes where this one stopped.
+      - name: Persist state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state
+          if git diff --cached --quiet; then
+            echo "no state changes"
+            exit 0
+          fi
+          git commit -m "state: production run $(date -u +%FT%TZ) [skip ci]"
+          for i in 1 2 3; do
+            if git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME"; then
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::error::could not push state back"
+          exit 1
+
+      - name: Upload QC reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qc-reports
+          path: |
+            state/episodes/*/qc/*.json
+            logs/
+          if-no-files-found: ignore
+          retention-days: 14

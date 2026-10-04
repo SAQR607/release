@@ -1,0 +1,112 @@
+name: manual
+
+# On-demand runs: tests, health checks, status, snapshots, dry-runs.
+# This workflow NEVER publishes (dry-run stops before upload by design).
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        type: choice
+        options: [tests, doctor, doctor-online, status, schedule, snapshot, dry-run]
+        default: tests
+      episode:
+        description: 'episode id for dry-run (empty = next due slot)'
+        default: ''
+      sample_seconds:
+        description: 'seconds to render in dry-run'
+        default: '10'
+
+concurrency:
+  group: manual-${{ inputs.command }}
+  cancel-in-progress: true
+
+# write: a dry-run persists RENDER_QC state so the next production run
+# resumes exactly at publish (never re-generating what was already QCd).
+permissions:
+  contents: write
+
+env:
+  PYTHONUTF8: '1'
+  TZ: UTC
+  TTS_THREADS: '2'
+  FFMPEG_THREADS: '2'
+  WHISPER_THREADS: '2'
+  GROQ_API_KEYS: ${{ secrets.GROQ_API_KEYS }}
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Verify ffmpeg
+        run: ffmpeg -version && ffprobe -version
+
+      - name: Cache models (kokoro + whisper)
+        uses: actions/cache@v4
+        with:
+          path: |
+            models
+            ~/.cache/huggingface
+          key: models-${{ runner.os }}-v1-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            models-${{ runner.os }}-v1-
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Init config/state
+        run: python -m app init
+
+      - name: Run command
+        env:
+          CMD: ${{ inputs.command }}
+          EPISODE: ${{ inputs.episode }}
+          SAMPLE: ${{ inputs.sample_seconds }}
+        run: |
+          case "$CMD" in
+            tests)        python -m pytest -q ;;
+            doctor)       python -m app doctor ;;
+            doctor-online) python -m app doctor --online ;;
+            status)       python -m app status ;;
+            schedule)     python -m app schedule ;;
+            snapshot)     python -m app snapshot ;;
+            dry-run)
+              EXTRA=""
+              if [ -n "$EPISODE" ]; then EXTRA="--episode $EPISODE"; fi
+              python -m app dry-run $EXTRA --sample "$SAMPLE"
+              ;;
+            *) echo "::error::unknown command"; exit 1 ;;
+          esac
+
+      - name: Persist state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state
+          if git diff --cached --quiet; then
+            echo "no state changes"
+            exit 0
+          fi
+          git commit -m "state: manual ${{ inputs.command }} $(date -u +%FT%TZ) [skip ci]"
+          for i in 1 2 3; do
+            if git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME"; then
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::error::could not push state back"
+          exit 1
